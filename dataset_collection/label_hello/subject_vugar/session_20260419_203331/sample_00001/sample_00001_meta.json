@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00001",
+  "gesture_label": "hello",
+  "subject_id": "vugar",
+  "session_id": "20260419_203331",
+  "hand_size": "medium",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "standing",
+  "sampling_rate_hz": 100,
+  "n_frames": 539,
+  "duration_sec": 5.378630638122559,
+  "raw_csv": "dataset_collection\\label_hello\\subject_vugar\\session_20260419_203331\\sample_00001\\sample_00001_raw.csv",
+  "notes": "",
+  "created_at": "2026-04-19T20:33:43"
+}

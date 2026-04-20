@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00004",
+  "gesture_label": "hello",
+  "subject_id": "Denis",
+  "session_id": "20260417_234833",
+  "hand_size": "large",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "standing",
+  "sampling_rate_hz": 100,
+  "n_frames": 627,
+  "duration_sec": 6.2602379322052,
+  "raw_csv": "auto_trimmer_dataset_and_code\\test\\label_hello\\subject_Denis\\session_20260417_234833\\sample_00004\\sample_00004_raw.csv",
+  "notes": "",
+  "created_at": "2026-04-17T23:49:21"
+}

@@ -1,0 +1,354 @@
+[17.04.2026 3:59] денис чумак: === TOP 10 CONFIGS ===
+
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 2, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.908634919928983), 'mean_recall': np.float64(0.9591050537370549), 'norm_start_err_ms': np.float64(0.3364583333333333), 'norm_end_err_ms': np.float64(0.7843750000000002)}
+SCORE: 1.147847952171216
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 3, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.908634919928983), 'mean_recall': np.float64(0.9591050537370549), 'norm_start_err_ms': np.float64(0.3364583333333333), 'norm_end_err_ms': np.float64(0.7843750000000002)}
+SCORE: 1.147847952171216
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 5, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.908634919928983), 'mean_recall': np.float64(0.9591050537370549), 'norm_start_err_ms': np.float64(0.3364583333333333), 'norm_end_err_ms': np.float64(0.7843750000000002)}
+SCORE: 1.147847952171216
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 7, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.908634919928983), 'mean_recall': np.float64(0.9591050537370549), 'norm_start_err_ms': np.float64(0.3364583333333333), 'norm_end_err_ms': np.float64(0.7843750000000002)}
+SCORE: 1.147847952171216
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 3, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 2, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.9085270179075878), 'mean_recall': np.float64(0.9584651754098438), 'norm_start_err_ms': np.float64(0.3302083333333333), 'norm_end_err_ms': np.float64(0.7916666666666666)}
+SCORE: 1.147043623153494
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 3, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 3, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.9085270179075878), 'mean_recall': np.float64(0.9584651754098438), 'norm_start_err_ms': np.float64(0.3302083333333333), 'norm_end_err_ms': np.float64(0.7916666666666666)}
+SCORE: 1.147043623153494
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 3, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 5, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.9085270179075878), 'mean_recall': np.float64(0.9584651754098438), 'norm_start_err_ms': np.float64(0.3302083333333333), 'norm_end_err_ms': np.float64(0.7916666666666666)}
+SCORE: 1.147043623153494
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 3, 'thr_start': 10, 'thr_end': 5, 'min_start_run': 7, 'min_end_run': 3, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.9085270179075878), 'mean_recall': np.float64(0.9584651754098438), 'norm_start_err_ms': np.float64(0.3302083333333333), 'norm_end_err_ms': np.float64(0.7916666666666666)}
+SCORE: 1.147043623153494
+----------------------------------------
+CFG: {'baseline_len': 10, 'smooth_win': 7, 'thr_start': 30, 'thr_end': 10, 'min_start_run': 2, 'min_end_run': 2, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.9121775710323666), 'mean_recall': np.float64(0.9549478189851696), 'norm_start_err_ms': np.float64(0.32708333333333334), 'norm_end_err_ms': np.float64(0.8052083333333334)}
+SCORE: 1.1454587624234684
+----------------------------------------
+CFG: {'baseline_len': 10, 'smooth_win': 7, 'thr_start': 30, 'thr_end': 10, 'min_start_run': 3, 'min_end_run': 2, 'margin': 15}
+METRICS: {'mean_iou': np.float64(0.9121775710323666), 'mean_recall': np.float64(0.9549478189851696), 'norm_start_err_ms': np.float64(0.32708333333333334), 'norm_end_err_ms': np.float64(0.8052083333333334)}
+SCORE: 1.1454587624234684
+----------------------------------------
+ONLY GYRO
+[17.04.2026 4:20] денис чумак: CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 2, 'min_end_run': 2, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9244279896707875), 'mean_recall': np.float64(0.9706271458064794), 'norm_start_err_ms': np.float64(0.35833333333333334), 'norm_end_err_ms': np.float64(0.5552083333333333)}
+SCORE: 1.2327417771546751
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 3, 'min_end_run': 2, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9244279896707875), 'mean_recall': np.float64(0.9706271458064794), 'norm_start_err_ms': np.float64(0.35833333333333334), 'norm_end_err_ms': np.float64(0.5552083333333333)}
+SCORE: 1.2327417771546751
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 2, 'min_end_run': 3, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9209434340585108), 'mean_recall': np.float64(0.9712437854396244), 'norm_start_err_ms': np.float64(0.35833333333333334), 'norm_end_err_ms': np.float64(0.55625)}
+SCORE: 1.2293147053222855
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 3, 'min_end_run': 3, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9209434340585108), 'mean_recall': np.float64(0.9712437854396244), 'norm_start_err_ms': np.float64(0.35833333333333334), 'norm_end_err_ms': np.float64(0.55625)}
+SCORE: 1.2293147053222855
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 3, 'min_end_run': 3, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9231611804902471), 'mean_recall': np.float64(0.968799383367894), 'norm_start_err_ms': np.float64(0.3729166666666666), 'norm_end_err_ms': np.float64(0.56875)}
+SCORE: 1.2219408105109835
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 3, 'min_end_run': 2, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9227967314591066), 'mean_recall': np.float64(0.9679217887402993), 'norm_start_err_ms': np.float64(0.3729166666666666), 'norm_end_err_ms': np.float64(0.5760416666666667)}
+SCORE: 1.2188623047032863
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 2, 'min_end_run': 3, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.917606501758485), 'mean_recall': np.float64(0.9688782975093081), 'norm_start_err_ms': np.float64(0.38125000000000003), 'norm_end_err_ms': np.float64(0.56875)}
+SCORE: 1.21393348026407
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 2, 'min_end_run': 2, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9172420527273445), 'mean_recall': np.float64(0.9680007028817136), 'norm_start_err_ms': np.float64(0.38125000000000003), 'norm_end_err_ms': np.float64(0.5760416666666667)}
+SCORE: 1.2108549744563728
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 3, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 3, 'min_end_run': 3, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9178885510607321), 'mean_recall': np.float64(0.9676282597095153), 'norm_start_err_ms': np.float64(0.3958333333333333), 'norm_end_err_ms': np.float64(0.5666666666666665)}
+SCORE: 1.2097155068864414
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 3, 'thr_start': 20, 'thr_end': 20, 'min_start_run': 3, 'min_end_run': 2, 'margin': 10, 'acc_weight': 3}
+METRICS: {'mean_iou': np.float64(0.9164604285772998), 'mean_recall': np.float64(0.9658570258539951), 'norm_start_err_ms': np.float64(0.3958333333333333), 'norm_end_err_ms': np.float64(0.5791666666666666)}
+SCORE: 1.2034746440896968
+[17.04.2026 4:20] денис чумак: ----------------------------------------
+[17.04.2026 4:29] денис чумак: CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 40, 'min_start_run': 7, 'min_end_run': 5, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9333030682088891), 'mean_recall': np.float64(0.9708188908474297), 'norm_start_err_ms': np.float64(0.35625), 'norm_end_err_ms': np.float64(0.5447916666666667)}
+SCORE: 1.245481902717347
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 35, 'min_start_run': 7, 'min_end_run': 5, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9284525605159292), 'mean_recall': np.float64(0.9776347019898756), 'norm_start_err_ms': np.float64(0.35625), 'norm_end_err_ms': np.float64(0.5447916666666667)}
+SCORE: 1.2447208817098545
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 40, 'min_start_run': 7, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9311416723317705), 'mean_recall': np.float64(0.9754486087023411), 'norm_start_err_ms': np.float64(0.35625), 'norm_end_err_ms': np.float64(0.5499999999999999)}
+SCORE: 1.244535837553175
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 40, 'thr_end': 35, 'min_start_run': 7, 'min_end_run': 5, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9273088823288086), 'mean_recall': np.float64(0.9735434434035151), 'norm_start_err_ms': np.float64(0.3697916666666667), 'norm_end_err_ms': np.float64(0.5364583333333334)}
+SCORE: 1.2395599483709179
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 35, 'min_start_run': 7, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9246982587746643), 'mean_recall': np.float64(0.9794509794303531), 'norm_start_err_ms': np.float64(0.35625), 'norm_end_err_ms': np.float64(0.553125)}
+SCORE: 1.239556346432876
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 40, 'thr_end': 40, 'min_start_run': 7, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9311322816245813), 'mean_recall': np.float64(0.9743570057728919), 'norm_start_err_ms': np.float64(0.3697916666666667), 'norm_end_err_ms': np.float64(0.5520833333333334)}
+SCORE: 1.2391839850883164
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 30, 'min_start_run': 7, 'min_end_run': 5, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9237080953201389), 'mean_recall': np.float64(0.9836834033825088), 'norm_start_err_ms': np.float64(0.35625), 'norm_end_err_ms': np.float64(0.5677083333333334)}
+SCORE: 1.2367306373496438
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 40, 'min_start_run': 5, 'min_end_run': 5, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9288633051971198), 'mean_recall': np.float64(0.9708188908474297), 'norm_start_err_ms': np.float64(0.37395833333333334), 'norm_end_err_ms': np.float64(0.5447916666666667)}
+SCORE: 1.2357296397055777
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 35, 'min_start_run': 5, 'min_end_run': 5, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9241176714386236), 'mean_recall': np.float64(0.9776347019898756), 'norm_start_err_ms': np.float64(0.37395833333333334), 'norm_end_err_ms': np.float64(0.5447916666666667)}
+SCORE: 1.235073492632549
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 40, 'thr_end': 40, 'min_start_run': 5, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9268270268055342), 'mean_recall': np.float64(0.9754486087023411), 'norm_start_err_ms': np.float64(0.37395833333333334), 'norm_end_err_ms': np.float64(0.5499999999999999)}
+SCORE: 1.2349086920269388
+----------------------------------------
+[17.04.2026 4:31] денис чумак: CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 50, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9471886983314208), 'mean_recall': np.float64(0.9678999511362729), 'norm_start_err_ms': np.float64(0.3364583333333333), 'norm_end_err_ms': np.float64(0.5552083333333333)}
+SCORE: 1.2604286690131847
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 50, 'thr_end': 45, 'min_start_run': 9, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9440801460340769), 'mean_recall': np.float64(0.9681264004116352), 'norm_start_err_ms': np.float64(0.3416666666666666), 'norm_end_err_ms': np.float64(0.5552083333333333)}
+SCORE: 1.255893486281058
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 45, 'thr_end': 45, 'min_start_run': 9, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9392179835560546), 'mean_recall': np.float64(0.9696898018214469), 'norm_start_err_ms': np.float64(0.340625), 'norm_end_err_ms': np.float64(0.5552083333333333)}
+SCORE: 1.2522818646489227
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 45, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9392179835560546), 'mean_recall': np.float64(0.9696898018214469), 'norm_start_err_ms': np.float64(0.340625), 'norm_end_err_ms': np.float64(0.5552083333333333)}
+SCORE: 1.2522818646489227
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 50, 'thr_end': 45, 'min_start_run': 9, 'min_end_run': 5, 'margin': 10, 'acc_weight': 9}
+METRICS: {'mean_iou': np.float64(0.9338014523934097), 'mean_recall': np.float64(0.9757819936227176), 'norm_start_err_ms': np.float64(0.35520833333333335), 'norm_end_err_ms': np.float64(0.5354166666666667)}
+SCORE: 1.2520831485670403
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 50, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 5, 'margin': 10, 'acc_weight': 9}
+METRICS: {'mean_iou': np.float64(0.9338014523934097), 'mean_recall': np.float64(0.9757819936227176), 'norm_start_err_ms': np.float64(0.35520833333333335), 'norm_end_err_ms': np.float64(0.5354166666666667)}
+SCORE: 1.2520831485670403
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 50, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9448553390930038), 'mean_recall': np.float64(0.9649567993261611), 'norm_start_err_ms': np.float64(0.35208333333333336), 'norm_end_err_ms': np.float64(0.5625)}
+SCORE: 1.2494544186887002
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 50, 'thr_end': 50, 'min_start_run': 9, 'min_end_run': 7, 'margin': 10, 'acc_weight': 9}
+METRICS: {'mean_iou': np.float64(0.933851540517113), 'mean_recall': np.float64(0.9738528204435526), 'norm_start_err_ms': np.float64(0.35520833333333335), 'norm_end_err_ms': np.float64(0.5427083333333332)}
+SCORE: 1.2487882327832447
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 50, 'thr_end': 50, 'min_start_run': 11, 'min_end_run': 7, 'margin': 10, 'acc_weight': 9}
+METRICS: {'mean_iou': np.float64(0.933851540517113), 'mean_recall': np.float64(0.9738528204435526), 'norm_start_err_ms': np.float64(0.35520833333333335), 'norm_end_err_ms': np.float64(0.5427083333333332)}
+SCORE: 1.2487882327832447
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 50, 'thr_end': 45, 'min_start_run': 9, 'min_end_run': 7, 'margin': 10, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9417882479495437), 'mean_recall': np.float64(0.9652285384565958), 'norm_start_err_ms': np.float64(0.35625), 'norm_end_err_ms': np.float64(0.5625)}
+SCORE: 1.2453003710235013
+[17.04.2026 4:39] денис чумак: CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 9, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9549904773338929), 'mean_recall': np.float64(0.984675613410734), 'norm_start_err_ms': np.float64(0.2833333333333333), 'norm_end_err_ms': np.float64(0.5375)}
+SCORE: 1.2995458453803335
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 9, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9549904773338929), 'mean_recall': np.float64(0.984675613410734), 'norm_start_err_ms': np.float64(0.2833333333333333), 'norm_end_err_ms': np.float64(0.5375)}
+SCORE: 1.2995458453803335
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 9, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9549285229053966), 'mean_recall': np.float64(0.9850030502188627), 'norm_start_err_ms': np.float64(0.28750000000000003), 'norm_end_err_ms': np.float64(0.5375)}
+SCORE: 1.2984303530367145
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 9, 'min_end_run': 9, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.953957462921017), 'mean_recall': np.float64(0.984675613410734), 'norm_start_err_ms': np.float64(0.2864583333333333), 'norm_end_err_ms': np.float64(0.5375)}
+SCORE: 1.2975753309674576
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 45, 'min_start_run': 9, 'min_end_run': 9, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9540987741348417), 'mean_recall': np.float64(0.9851999006125635), 'norm_start_err_ms': np.float64(0.28958333333333336), 'norm_end_err_ms': np.float64(0.5375)}
+SCORE: 1.2970937145023798
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 9, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9540987741348417), 'mean_recall': np.float64(0.9851999006125635), 'norm_start_err_ms': np.float64(0.28958333333333336), 'norm_end_err_ms': np.float64(0.5375)}
+SCORE: 1.2970937145023798
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 7, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9552165153395408), 'mean_recall': np.float64(0.9815448260802849), 'norm_start_err_ms': np.float64(0.2833333333333333), 'norm_end_err_ms': np.float64(0.5458333333333334)}
+SCORE: 1.2953934109877117
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 7, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9552165153395408), 'mean_recall': np.float64(0.9815448260802849), 'norm_start_err_ms': np.float64(0.2833333333333333), 'norm_end_err_ms': np.float64(0.5458333333333334)}
+SCORE: 1.2953934109877117
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 50, 'min_start_run': 11, 'min_end_run': 13, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9529792337501862), 'mean_recall': np.float64(0.984176748920289), 'norm_start_err_ms': np.float64(0.2833333333333333), 'norm_end_err_ms': np.float64(0.5447916666666667)}
+SCORE: 1.2950477831023597
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 50, 'min_start_run': 13, 'min_end_run': 13, 'margin': 15, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9529792337501862), 'mean_recall': np.float64(0.984176748920289), 'norm_start_err_ms': np.float64(0.2833333333333333), 'norm_end_err_ms': np.float64(0.5447916666666667)}
+SCORE: 1.2950477831023597
+----------------------------------------
+[17.04.2026 4:42] денис чумак: CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 9, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9573811917116091), 'mean_recall': np.float64(0.979144921623773), 'norm_start_err_ms': np.float64(0.25833333333333336), 'norm_end_err_ms': np.float64(0.5135416666666667)}
+SCORE: 1.3133056446858729
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 75, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 9, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.95990717151826), 'mean_recall': np.float64(0.9780011522879564), 'norm_start_err_ms': np.float64(0.26458333333333334), 'norm_end_err_ms': np.float64(0.5135416666666667)}
+SCORE: 1.3132703628910338
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 75, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 9, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.95990717151826), 'mean_recall': np.float64(0.9780011522879564), 'norm_start_err_ms': np.float64(0.26458333333333334), 'norm_end_err_ms': np.float64(0.5135416666666667)}
+SCORE: 1.3132703628910338
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 75, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9613269221307057), 'mean_recall': np.float64(0.9770499955096857), 'norm_start_err_ms': np.float64(0.26145833333333335), 'norm_end_err_ms': np.float64(0.5208333333333334)}
+SCORE: 1.3128694194365171
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 40, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9549911502002638), 'mean_recall': np.float64(0.9814430038084584), 'norm_start_err_ms': np.float64(0.25833333333333336), 'norm_end_err_ms': np.float64(0.5125000000000001)}
+SCORE: 1.312606952485339
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 75, 'thr_end': 40, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9575042037162874), 'mean_recall': np.float64(0.9802992344726414), 'norm_start_err_ms': np.float64(0.26458333333333334), 'norm_end_err_ms': np.float64(0.5125000000000001)}
+SCORE: 1.3125587443998723
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 75, 'thr_end': 40, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9575042037162874), 'mean_recall': np.float64(0.9802992344726414), 'norm_start_err_ms': np.float64(0.26458333333333334), 'norm_end_err_ms': np.float64(0.5125000000000001)}
+SCORE: 1.3125587443998723
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 7, 'thr_start': 75, 'thr_end': 40, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.9569663178865797), 'mean_recall': np.float64(0.9811919029900703), 'norm_start_err_ms': np.float64(0.26145833333333335), 'norm_end_err_ms': np.float64(0.515625)}
+SCORE: 1.3125564596806218
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 11, 'min_end_run': 9, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.957173468545986), 'mean_recall': np.float64(0.9786770335613776), 'norm_start_err_ms': np.float64(0.2625), 'norm_end_err_ms': np.float64(0.5135416666666667)}
+SCORE: 1.3115671886828124
+----------------------------------------
+CFG: {'baseline_len': 20, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 45, 'min_start_run': 13, 'min_end_run': 9, 'margin': 13, 'acc_weight': 7}
+METRICS: {'mean_iou': np.float64(0.957173468545986), 'mean_recall': np.float64(0.9786770335613776), 'norm_start_err_ms': np.float64(0.2625), 'norm_end_err_ms': np.float64(0.5135416666666667)}
+SCORE: 1.3115671886828124
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9626099182674022), 'mean_recall': np.float64(0.9832081574431374), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.3312848127332846
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9626099182674022), 'mean_recall': np.float64(0.9832081574431374), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.3312848127332846
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9632945913403507), 'mean_recall': np.float64(0.9836309778120059), 'norm_start_err_ms': np.float64(0.2489583333333334), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3303481780275543
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9632945913403507), 'mean_recall': np.float64(0.9836309778120059), 'norm_start_err_ms': np.float64(0.2489583333333334), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3303481780275543
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 9, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9616211150778948), 'mean_recall': np.float64(0.9833151779910825), 'norm_start_err_ms': np.float64(0.25104166666666666), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.3281727218725443
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.96302427992656), 'mean_recall': np.float64(0.9830040462696622), 'norm_start_err_ms': np.float64(0.25625000000000003), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3275142076883573
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 70, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.96302427992656), 'mean_recall': np.float64(0.9830040462696622), 'norm_start_err_ms': np.float64(0.25625000000000003), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3275142076883573
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 9, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9621340803360501), 'mean_recall': np.float64(0.9837023248439696), 'norm_start_err_ms': np.float64(0.2572916666666667), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3267304752424318
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 37, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9632748766792781), 'mean_recall': np.float64(0.9813901237397394), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.5083333333333333)}
+SCORE: 1.3264839509231214
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 37, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9632748766792781), 'mean_recall': np.float64(0.9813901237397394), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.5083333333333333)}
+SCORE: 1.3264839509231214
+----------------------------------------
+
+
+
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 5, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9659552624242381), 'mean_recall': np.float64(0.9804733322299364), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.496875)}
+SCORE: 1.3320517617621999
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9626099182674022), 'mean_recall': np.float64(0.9832081574431374), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.3312848127332846
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9626099182674022), 'mean_recall': np.float64(0.9832081574431374), 'norm_start_err_ms': np.float64(0.24375), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.3312848127332846
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 67, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 5, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9658771083455656), 'mean_recall': np.float64(0.9801709000520002), 'norm_start_err_ms': np.float64(0.24583333333333335), 'norm_end_err_ms': np.float64(0.496875)}
+SCORE: 1.3311671483767658
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 67, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 5, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9658771083455656), 'mean_recall': np.float64(0.9801709000520002), 'norm_start_err_ms': np.float64(0.24583333333333335), 'norm_end_err_ms': np.float64(0.496875)}
+SCORE: 1.3311671483767658
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 67, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9625275406425896), 'mean_recall': np.float64(0.982905725265201), 'norm_start_err_ms': np.float64(0.24583333333333335), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.33039597580171
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 3, 'thr_start': 67, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9625275406425896), 'mean_recall': np.float64(0.982905725265201), 'norm_start_err_ms': np.float64(0.24583333333333335), 'norm_end_err_ms': np.float64(0.49374999999999997)}
+SCORE: 1.33039597580171
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 11, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9632945913403507), 'mean_recall': np.float64(0.9836309778120059), 'norm_start_err_ms': np.float64(0.2489583333333334), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3303481780275543
+----------------------------------------
+CFG: {'baseline_len': 17, 'smooth_win': 5, 'thr_start': 65, 'thr_end': 35, 'min_start_run': 13, 'min_end_run': 7, 'margin': 13, 'acc_weight': 5}
+METRICS: {'mean_iou': np.float64(0.9632945913403507), 'mean_recall': np.float64(0.9836309778120059), 'norm_start_err_ms': np.float64(0.2489583333333334), 'norm_end_err_ms': np.float64(0.4947916666666667)}
+SCORE: 1.3303481780275543
+----------------------------------------
+
+
+CFG: {'baseline_len': 17, 'smooth_win_gyro': 6, 'smooth_win_acc': 5, 'thr_start': 65, 'thr_end': 29, 'min_start_run': 14, 'min_end_run': 6, 'margin': 15, 'gyro_weight': 1, 'acc_weight': 4}
+METRICS: {'mean_iou': np.float64(0.9633091914329303), 'mean_recall': np.float64(0.9882228642222572), 'norm_start_err_ms': np.float64(0.2520833333333334), 'norm_end_err_ms': np.float64(0.5260416666666666)}
+SCORE: 1.3228054099662847
+
+CFG: {'baseline_len': 18, 'smooth_win_gyro': 7, 'smooth_win_acc': 3, 'thr_start': 66.5, 'thr_end': 35.5, 'min_start_run': 10, 'min_end_run': 7, 'margin': 14, 'acc_weight': 5.0}
+METRICS: {'mean_iou': np.float64(0.964784339691574), 'mean_recall': np.float64(0.9840332496816314), 'norm_start_err_ms': np.float64(0.2354166666666667), 'norm_end_err_ms': np.float64(0.4864583333333334)}
+SCORE: 1.3386417895005527
+----------------------------------------
+
+CFG: {'baseline_len': 17, 'smooth_win_gyro': 10, 'smooth_win_acc': 2, 'thr_start': 50.80000000000001, 'thr_end': 29.50000000000002, 'min_start_run': 15, 'min_end_run': 7, 'margin': 13, 'acc_weight': 4.000000000000001}
+METRICS: {'mean_iou': np.float64(0.9650883337446151), 'mean_recall': np.float64(0.9835647926409319), 'norm_start_err_ms': np.float64(0.24895833333333336), 'norm_end_err_ms': np.float64(0.4822916666666666)}
+SCORE: 1.239393875995841
+
+CFG: {'baseline_len': 17, 'smooth_win_gyro': 6, 'smooth_win_acc': 3, 'thr_start': 54.80000000000007, 'thr_end': 30, 'min_start_run': 11, 'min_end_run': 6, 'margin_start': 14, 'margin_end': 7, 'acc_weight': 4.100000000000001}
+METRICS: {'mean_iou': np.float64(0.9660290483810853), 'mean_recall': np.float64(0.9839960523753746), 'norm_start_err_ms': np.float64(0.23854166666666665), 'norm_end_err_ms': np.float64(0.47812499999999997)}
+SCORE: 1.24580167980631
+----------------------------------------
+
+CFG: {'baseline_len': 18, 'smooth_win_gyro': 5, 'smooth_win_acc': 1, 'thr_start': 56.649999999999736, 'thr_end': 29.000000000000014, 'min_start_run': 11, 'min_end_run': 6, 'margin_start': 14, 'margin_end': 6, 'acc_weight': 4.299999999999995}
+METRICS: {'mean_iou': np.float64(0.9627435072562398), 'mean_recall': np.float64(0.9815697773844526), 'norm_start_err': np.float64(0.23125000000000004), 'norm_end_err': np.float64(0.5104166666666666), 'std_start_err_sign': np.float64(0.20016269424312477), 'std_end_err_sign': np.float64(0.35779392540337457)}
+SCORE: 1.180852040353578
+
+
+CFG: {'baseline_len': 17, 'smooth_win_gyro': 1, 'smooth_win_acc': 2, 'thr_start': 64, 'thr_end': 36, 'min_start_run': 13, 'min_end_run': 5, 'margin_start': 14, 'margin_end': 8, 'acc_weight': 4.900000000000002}
+METRICS: {'mean_iou': np.float64(0.9660894191807844), 'mean_recall': np.float64(0.9833184207448952), 'norm_start_err': np.float64(0.2416666666666667), 'norm_end_err': np.float64(0.5052083333333334), 'std_start_err_sign': np.float64(0.20949675149960892), 'std_end_err_sign': np.float64(0.36667702400144403)}
+SCORE: 1.3320179716277214
+----------------------------------------
+
+
+{'mean_iou': np.float64(0.9660616806017511), 'mean_recall': np.float64(0.9840778762396415), 'norm_start_err': np.float64(0.24166666666666667), 'norm_end_err': np.float64(0.5041666666666668), 'std_start_err_sign': np.float64(0.20749832663314552), 'std_end_err_sign': np.float64(0.37078651389834677)} 1.3327584063455358
+
