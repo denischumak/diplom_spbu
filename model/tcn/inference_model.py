@@ -40,7 +40,7 @@ class LiveInference:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         print("[INFO] Loading model and configurations...")
-        # 1. Загружаем сохраненный чекпоинт
+        
         checkpoint_path = Path(cfg.ARTIFACTS_PATH) / "best_tcn.pt"
         if not checkpoint_path.exists():
             raise FileNotFoundError(f"Haven't found checkpoint {checkpoint_path}!")
@@ -81,7 +81,7 @@ class LiveInference:
             n_hall=self.sens_cfg["n_hall"],
         )
 
-        # 4. Настраиваем COM-порт
+        
         self.ser = serial.Serial(
             port=args.port,
             baudrate=args.baudrate,
@@ -171,7 +171,7 @@ class LiveInference:
         x = x.unsqueeze(0).to(self.device)  # shape: [1, C, T]
         length = length.unsqueeze(0).to(self.device)  # shape: []
 
-        # Шаг 5: Прогноз модели
+  
         with torch.no_grad():
             logits = self.model(x, length)
             probs = torch.softmax(logits, dim=1)

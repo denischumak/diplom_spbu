@@ -86,7 +86,6 @@ def main():
         n_hall=cfg.SENS_CFG["n_hall"],
     )
 
-    # Общие настройки для всех лоадеров
     dl_kwargs = dict(
         batch_size=cfg.TCN_CFG["batch_size"],
         num_workers=4,
@@ -248,12 +247,10 @@ def main():
         y_true = data['labels']
         y_pred = data['preds']
         
-        # Вывод основных метрик (Precision, Recall, F1)
         print(classification_report(y_true, y_pred, 
                                     target_names=[idx2label[i] for i in range(len(labels))],
                                     zero_division=0))
-        
-        # Вывод матрицы ошибок
+
         cm = confusion_matrix(y_true, y_pred)
         print(f"Confusion matrix for {s_id}:")
         print(cm)

@@ -36,25 +36,23 @@ def augment_trimmed_sequence(sample: np.ndarray, augment_cfg, n_hall) -> np.ndar
         )
         data += noise
 
-    # 3. Time Warping & Window Slicing (Временное искажение)
+
     # Случайно "отрезаем" края жеста (от 0% до 15%) и растягиваем обратно до длины T.
-    # Это учит модель инвариантности к скорости выполнения жеста.
     if np.random.rand() < augment_cfg["p_warp"]:
-        # Выбираем, какую долю жеста оставить (от 85% до 100%)
+       
         crop_ratio = np.random.uniform(1.0 - augment_cfg["max_crop_ratio"], 1.0)
         crop_len = int(T * crop_ratio)
 
-        # Выбираем случайную стартовую точку
+       
         start_idx = np.random.randint(0, T - crop_len + 1)
         end_idx = start_idx + crop_len
 
         cropped_data = data[start_idx:end_idx, :]
 
-        # Создаем оси времени для интерполяции
+        
         x_original = np.linspace(0, 1, crop_len)
         x_new = np.linspace(0, 1, T)
 
-        # Линейная интерполяция вдоль оси времени (axis=0)
         interpolator = interp1d(x_original, cropped_data, axis=0, kind="linear")
         data = interpolator(x_new)
 
@@ -128,7 +126,7 @@ def add_hall_diff_to_sample(sample, n_hall):
     hall_diffs = np.diff(halls, axis=0, prepend=halls[:1])
     others = sample[:, n_hall:]
 
-    # Склеиваем всё в один новый массив
+   
     new_data = np.concatenate([halls, hall_diffs, others], axis=1)
 
     return new_data

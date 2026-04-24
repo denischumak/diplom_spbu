@@ -16,9 +16,6 @@ from sklearn.model_selection import StratifiedKFold
 from trimmer.load_trimmer_cfg import load_trim_cfg
 from config import SENS_CFG
 
-# # =========================
-# # METRICS
-# # =========================
 
 
 # pred_start, gt_end - EXCLUSIVE
@@ -35,7 +32,7 @@ def compute_iou(pred_start, pred_end, gt_start, gt_end):
 
 
 def compute_recall(pred_start, pred_end, gt_start, gt_end):
-    # СЃРєРѕР»СЊРєРѕ С‡Р°СЃС‚Рё gt РїРѕРєСЂС‹С‚Рѕ
+   
     inter_start = max(pred_start, gt_start)
     inter_end = min(pred_end, gt_end)
     intersection = max(0, inter_end - inter_start)
@@ -50,7 +47,7 @@ def evaluate_config(dataset, cfg, max_err_ms=100, mean_by="subject_id"):
     trimmer = AutoTrimmer(cfg, SENS_CFG)
     groups = {}
     for sample in dataset:
-        key = sample[mean_by]  # например, 'subject_01' или 'hello'
+        key = sample[mean_by]
         if key not in groups:
             groups[key] = {"ious": [], "recalls": [], "start_errs": [], "end_errs": []}
 
@@ -71,7 +68,7 @@ def evaluate_config(dataset, cfg, max_err_ms=100, mean_by="subject_id"):
         groups[key]["start_errs"].append(norm_start_err)
         groups[key]["end_errs"].append(norm_end_err)
 
-    # Для каждой группы вычисляем средние метрики
+
     group_mean_iou = []
     group_mean_recall = []
     group_mean_start_err = []
@@ -87,9 +84,7 @@ def evaluate_config(dataset, cfg, max_err_ms=100, mean_by="subject_id"):
         "mean_recall": np.mean(group_mean_recall),
         "norm_start_err": np.mean(group_mean_start_err),
         "norm_end_err": np.mean(group_mean_end_err),
-        "std_start_err_sign": np.std(
-            group_mean_start_err
-        ),  # разброс между группами
+        "std_start_err_sign": np.std(group_mean_start_err),
         "std_end_err_sign": np.std(group_mean_end_err),
     }
 
@@ -213,52 +208,52 @@ import json
 if __name__ == "__main__":
     dataset = load_trim_dataset(r"C:\Users\User\Desktop\diplom\dataset_collection")
     cfg = load_trim_cfg(r"C:\Users\User\Desktop\diplom\model\trimmer\trimmer_cfg.json")
-    metrics = evaluate_config(dataset, cfg)
-    print(metrics, f"score: {getScore(metrics)}")
-    # print("Starting Bayesian optimization with Stratified 5-Fold CV...")
-    # study = optimize_hyperparameters(dataset, n_trials=2000, seed=42, n_splits=5)
+    # metrics = evaluate_config(dataset, cfg)
+    # print(metrics, f"score: {getScore(metrics)}")
+    print("Starting Bayesian optimization with Stratified 5-Fold CV...")
+    study = optimize_hyperparameters(dataset, n_trials=2000, seed=42, n_splits=5)
 
-    # cfgs = get_all_cfgs_and_scores(study, dataset, ret_values=100)
+    cfgs = get_all_cfgs_and_scores(study, dataset, ret_values=100)
 
-    # csv_path = Path(
-    #     r"C:\Users\User\Desktop\diplom\auto_trimmer_dataset_and_code\optuna_results_cv.csv"
-    # )
-    # with csv_path.open("w", newline="", encoding="utf-8") as f:
-    #     writer = csv.writer(f)
-    #     first = cfgs[0]
-    #     cfg_keys = list(first["cfg"].keys())
-    #     metric_keys = list(first["metrics_full"].keys())
-    #     header = (
-    #         cfg_keys
-    #         + [f"full_{k}" for k in metric_keys]
-    #         + ["cv_score_mean", "cv_score_std"]
-    #     )
-    #     writer.writerow(header)
-    #     for item in cfgs:
-    #         row = (
-    #             list(item["cfg"].values())
-    #             + list(item["metrics_full"].values())
-    #             + [item["score_cv_mean"], item["score_cv_std"]]
-    #         )
-    #         writer.writerow(row)
+    csv_path = Path(
+        r"C:\Users\User\Desktop\diplom\auto_trimmer_dataset_and_code\optuna_results_cv.csv"
+    )
+    with csv_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        first = cfgs[0]
+        cfg_keys = list(first["cfg"].keys())
+        metric_keys = list(first["metrics_full"].keys())
+        header = (
+            cfg_keys
+            + [f"full_{k}" for k in metric_keys]
+            + ["cv_score_mean", "cv_score_std"]
+        )
+        writer.writerow(header)
+        for item in cfgs:
+            row = (
+                list(item["cfg"].values())
+                + list(item["metrics_full"].values())
+                + [item["score_cv_mean"], item["score_cv_std"]]
+            )
+            writer.writerow(row)
 
-    # # График
-    # t = np.arange(1, len(cfgs) + 1)
-    # plt.figure(figsize=(10, 6))
-    # means = [cfg["score_cv_mean"] for cfg in cfgs]
-    # stds = [cfg["score_cv_std"] for cfg in cfgs]
-    # plt.plot(t, means, label="CV mean score", color="blue")
-    # plt.fill_between(
-    #     t,
-    #     np.array(means) - np.array(stds),
-    #     np.array(means) + np.array(stds),
-    #     alpha=0.2,
-    #     color="blue",
-    #     label="±1 std",
-    # )
-    # plt.xlabel("Configuration (sorted by CV mean score)")
-    # plt.ylabel("Score")
-    # plt.grid(True)
-    # plt.title("Optimization Results (Stratified K-Fold CV)")
-    # plt.legend()
-    # plt.show()
+    
+    t = np.arange(1, len(cfgs) + 1)
+    plt.figure(figsize=(10, 6))
+    means = [cfg["score_cv_mean"] for cfg in cfgs]
+    stds = [cfg["score_cv_std"] for cfg in cfgs]
+    plt.plot(t, means, label="CV mean score", color="blue")
+    plt.fill_between(
+        t,
+        np.array(means) - np.array(stds),
+        np.array(means) + np.array(stds),
+        alpha=0.2,
+        color="blue",
+        label="±1 std",
+    )
+    plt.xlabel("Configuration (sorted by CV mean score)")
+    plt.ylabel("Score")
+    plt.grid(True)
+    plt.title("Optimization Results (Stratified K-Fold CV)")
+    plt.legend()
+    plt.show()

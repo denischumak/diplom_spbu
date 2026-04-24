@@ -74,28 +74,28 @@ class AutoTrimmer:
         trim_cfg = self.trim_cfg
         sens_cfg = self.sens_cfg
 
-        # Выделяем каналы
+        
         n_hall_acc = sens_cfg["n_hall"] + sens_cfg["n_acc"]
         acc = x[:, sens_cfg["n_hall"] : n_hall_acc]
         gyro = x[:, n_hall_acc : n_hall_acc + sens_cfg["n_gyro"]]
         quat = x[:, n_hall_acc + sens_cfg["n_gyro"] : ]
 
-        # Реверсированные копии (для поиска конца)
+        
         acc_rev = acc[::-1]
         gyro_rev = gyro[::-1]
         quat_rev = quat[::-1]
 
-        # Скоры для старта (на прямых данных)
+        
         s_acc_s = self._compute_score(acc, "acc", "start")
         s_gyro_s = self._compute_score(gyro, "gyro", "start")
         s_quat_s = self._compute_score(quat, "quat", "start")
 
-        # Скоры для конца (на перевёрнутых данных)
+        
         s_acc_e = self._compute_score(acc_rev, "acc", "end")
         s_gyro_e = self._compute_score(gyro_rev, "gyro", "end")
         s_quat_e = self._compute_score(quat_rev, "quat", "end")
 
-        # Взвешенная сумма
+        
         score_start = (
             trim_cfg["gyro_weight"] * s_gyro_s
             + trim_cfg["acc_weight"] * s_acc_s
@@ -107,11 +107,11 @@ class AutoTrimmer:
             + trim_cfg["quat_weight"] * s_quat_e
         )
 
-        # Границы
+        
         start = self._find_boundary(score_start, "start")
         end = t - self._find_boundary(score_end, "end") 
 
-        # Отступы
+       
         start = max(0, start - trim_cfg["margin_start"])
         end = min(t, end + trim_cfg["margin_end"])
         if not start < end:
