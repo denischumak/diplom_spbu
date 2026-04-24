@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00010",
+  "gesture_label": "bye",
+  "subject_id": "artem",
+  "session_id": "20260423_001847",
+  "hand_size": "large",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "standing",
+  "sampling_rate_hz": 100,
+  "n_frames": 468,
+  "duration_sec": 4.6797356605529785,
+  "raw_csv": "dataset_collection\\label_bye\\subject_artem\\session_20260423_001847\\sample_00010\\sample_00010_raw.csv",
+  "notes": "",
+  "created_at": "2026-04-23T00:19:59"
+}

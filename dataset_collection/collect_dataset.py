@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # collect_dataset.py
+import sys
+from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import argparse
 import csv
 import json
@@ -11,22 +14,14 @@ from pathlib import Path
 
 import numpy as np
 import serial
+import model.config as cfg
 
-
+AXES = ["x", "y", "z"]
 FEATURE_NAMES = [
-    "hall1",
-    "hall2",
-    "hall3",
-    "acc_x",
-    "acc_y",
-    "acc_z",
-    "gyro_x",
-    "gyro_y",
-    "gyro_z",
-    "quat1",
-    "quat2",
-    "quat3",
-    "quat4",
+    *[f"hall_{i + 1}" for i in range(cfg.SENS_CFG["n_hall"])],
+    *[f"acc_{AXES[i]}" for i in range(cfg.SENS_CFG["n_acc"])],
+    *[f"gyro_{AXES[i]}" for i in range(cfg.SENS_CFG["n_gyro"])],
+    *[f"quat_{i + 1}" for i in range(cfg.SENS_CFG["n_quat"])],
 ]
 
 
@@ -36,7 +31,7 @@ def parse_fingers(s: str):
     return [x.strip() for x in s.split(",") if x.strip()]
 
 
-def parse_line(line: str, expected_n: int = 13):
+def parse_line(line: str, expected_n: int = len(FEATURE_NAMES)):
     parts = line.strip().split()
     if len(parts) != expected_n:
         return None
@@ -71,7 +66,7 @@ class DatasetCollector:
         self.recording = threading.Event()
         self.stop_event = threading.Event()
 
-        self.buffer = []  # each row: [13 features]
+        self.buffer = []
         self.sample_idx = 0
         self.current_start_ts = None
 
@@ -140,15 +135,9 @@ class DatasetCollector:
         with meta_json.open("w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
 
-        # DELETE LATER: temporary gt for trimming, can be generated later if needed
-        gt_json = sample_dir / f"{sample_id}_gt.json"
-        gt_data = {"gt_start": 0, "gt_end": meta["n_frames"]}
-        with gt_json.open("w", encoding="utf-8") as f:
-            json.dump(gt_data, f, ensure_ascii=False, indent=2)
-
         # Helpful reminder for later preprocessing
         print(
-            f"[SAVE] {sample_id} saved: {data.shape[0]} frames, {duration_sec:.3f}s",
+            f"[SAVE] {sample_id} saved: {data.shape[0]} frames, {duration_sec}s",
             flush=True,
         )
 
@@ -181,7 +170,6 @@ class DatasetCollector:
     def _serial_loop(self):
         while not self.stop_event.is_set():
             try:
-
                 raw = self.ser.readline()
                 if not raw:
                     continue
