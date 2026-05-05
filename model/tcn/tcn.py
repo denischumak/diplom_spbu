@@ -69,11 +69,7 @@ class GestureTCN(nn.Module):
         )
         # receptive field = 1 + s * (k-1) * (2^n - 1), where n - number of residual blocks, s - number of convs in each block
         # receptive field = 29 in this case
-        dilations = [
-            1,
-            2,
-            4,
-        ]
+        dilations = [2**i for i in range(tcn_cfg["num_blocks"])]
         self.blocks = nn.Sequential(
             *[
                 ResidualTCNBlock(tcn_cfg["hidden"], d, tcn_cfg["dropout"])

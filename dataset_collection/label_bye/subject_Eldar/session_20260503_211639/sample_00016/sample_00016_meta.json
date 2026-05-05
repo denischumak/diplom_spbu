@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00016",
+  "gesture_label": "bye",
+  "subject_id": "Eldar",
+  "session_id": "20260503_211639",
+  "hand_size": "medium",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "sitting",
+  "sampling_rate_hz": 100,
+  "n_frames": 371,
+  "duration_sec": 3.7109274864196777,
+  "raw_csv": "dataset_collection\\label_bye\\subject_Eldar\\session_20260503_211639\\sample_00016\\sample_00016_raw.csv",
+  "notes": "",
+  "created_at": "2026-05-03T21:17:48"
+}

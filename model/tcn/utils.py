@@ -47,10 +47,4 @@ def compute_person_weights(train_records, person2id):
     sample_weights = [weights[subject_id] for subject_id in subject_labels]
     return torch.tensor(sample_weights, dtype=torch.float32)
 
-def compute_class_weights(train_records, label2idx):
-    y = np.array([label2idx[r["gesture_id"]] for r in train_records], dtype=np.int64)
-    counts = np.bincount(y, minlength=len(label2idx))
-    total = counts.sum()
-    weights = total / (len(label2idx) * np.maximum(counts, 1))
-    return torch.tensor(weights, dtype=torch.float32)
 

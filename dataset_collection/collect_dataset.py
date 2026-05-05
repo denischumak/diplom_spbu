@@ -62,7 +62,7 @@ class DatasetCollector:
         )
         self.ser.set_buffer_size(rx_size=16384, tx_size=16384)
         self.lock = threading.Lock()
-        
+
         self.recording = threading.Event()
         self.stop_event = threading.Event()
 

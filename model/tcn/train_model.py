@@ -11,7 +11,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, WeightedRandomSampler
-import numpy as np
 from load_data import load_records, split_records
 from gesture_ds_class import GestureDataset
 from trimmer.autotrimmer import AutoTrimmer
@@ -20,7 +19,6 @@ from liveplot import LivePlot
 import config as cfg
 import preprocessing
 import utils
-from sklearn.metrics import classification_report, confusion_matrix
 
 
 def main():
@@ -29,16 +27,14 @@ def main():
 
     records = load_records(cfg.DATA_ROOT)
 
-    train_records, val_records, test_records = split_records(
+    train_records, val_records = split_records(
         records,
-        test_on=cfg.TEST_ON,
+        leave_people=cfg.TEST_ON,
         val_size=cfg.VAL_SIZE,
         seed=cfg.SEED,
     )
-    print(
-        f"[INFO] train={len(train_records)} val={len(val_records)} test={len(test_records)}"
-    )
-    
+    print(f"[INFO] train={len(train_records)} val={len(val_records)}")
+
     labels = sorted({r["gesture_id"] for r in records})
     label2idx = {label: i for i, label in enumerate(labels)}
     idx2label = {i: label for label, i in label2idx.items()}
@@ -46,7 +42,7 @@ def main():
     person2id_train = {person: i for i, person in enumerate(people_train)}
 
     trimmer = AutoTrimmer(cfg.TRIMMER_CFG, cfg.SENS_CFG)
-    
+
     prep_kwargs = dict(
         trimmer=trimmer,
         n_hall=cfg.SENS_CFG["n_hall"],
@@ -54,9 +50,6 @@ def main():
     )
     train_samples = preprocessing.preprocess_data(train_records, **prep_kwargs)
     val_samples = preprocessing.preprocess_data(val_records, **prep_kwargs)
-    test_samples = preprocessing.preprocess_data(test_records, **prep_kwargs)
-
-
 
     # fit normalizer on TRAIN only
     mean, std = preprocessing.fit_normalizer_from_samples(train_samples)
@@ -110,29 +103,22 @@ def main():
         **dl_kwargs,
     )
 
-    test_loader = DataLoader(
-        GestureDataset(test_samples, train=False, augment=False, **gd_kwargs),
-        shuffle=False,
-        **dl_kwargs,
-    )
-
     model = GestureTCN(cfg.TCN_CFG, num_classes=len(labels)).to(device)
     total_params = sum(p.numel() for p in model.parameters())
-    print(f"[INFO] total number of params: {total_params:,}")
-    class_weights = utils.compute_class_weights(train_samples, label2idx).to(device)
-    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    print(f"[INFO] total number of params={total_params:,}")
+    criterion = nn.CrossEntropyLoss()
 
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=cfg.TCN_CFG["lr"],
         weight_decay=cfg.TCN_CFG["weight_decay"],
     )
-#     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-#     optimizer, 
-#     mode='min',
-#     factor=0.2,
-#     patience=10,
-# )
+    #     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+    #     optimizer,
+    #     mode='min',
+    #     factor=0.2,
+    #     patience=10,
+    # )
 
     plotter = LivePlot()
 
@@ -155,7 +141,7 @@ def main():
             model, val_loader, criterion, device, optimizer=None
         )
         # scheduler.step(val_loss)
-        
+
         history["train_loss"].append(train_loss)
         history["val_loss"].append(val_loss)
         history["train_acc"].append(train_acc)
@@ -217,47 +203,6 @@ def main():
                 ensure_ascii=False,
                 indent=2,
             )
-
-        # load best state and evaluate test
-        model.load_state_dict(best_state["model_state_dict"])
-
-    
-    model.eval()
-    all_results = {} # {subject_id: {'preds': [], 'labels': []}}
-
-    with torch.no_grad():
-        for x, lengths, y, subject_ids in test_loader:
-            x, lengths = x.to(device), lengths.to(device)
-            logits = model(x, lengths)
-            preds = logits.argmax(dim=1).cpu().numpy()
-            targets = y.numpy()
-            
-            for i, s_id in enumerate(subject_ids):
-                if s_id not in all_results:
-                    all_results[s_id] = {'preds': [], 'labels': []}
-                all_results[s_id]['preds'].append(preds[i])
-                all_results[s_id]['labels'].append(targets[i])
-
-    print("\n" + "="*30)
-    print("[TEST] Detailed report on test subjects")
-    print("="*30)
-
-    for s_id, data in all_results.items():
-        print(f"\n>>> Subject: {s_id}")
-        y_true = data['labels']
-        y_pred = data['preds']
-        
-        print(classification_report(y_true, y_pred, 
-                                    target_names=[idx2label[i] for i in range(len(labels))],
-                                    zero_division=0))
-
-        cm = confusion_matrix(y_true, y_pred)
-        print(f"Confusion matrix for {s_id}:")
-        print(cm)
-
-    print("\n[INFO] label mapping:")
-    for k, v in label2idx.items():
-        print(f"  {k} -> {v}")
 
     plt.ioff()
     plt.show()

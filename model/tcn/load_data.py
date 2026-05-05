@@ -3,6 +3,7 @@ import json
 from sklearn.model_selection import train_test_split
 import numpy as np
 
+
 def load_records(root_dir: str):
     root = Path(root_dir)
     records = []
@@ -26,7 +27,7 @@ def load_records(root_dir: str):
 
         records.append(
             {
-                "data": load_raw_csv(raw_csv),
+                "data": load_raw_csv(raw_csv).astype(np.float32, copy=False),
                 "gesture_id": gesture_id,
                 "subject_id": subject_id,
                 "sampling_rate_hz": sampling_rate_hz,
@@ -39,12 +40,10 @@ def load_records(root_dir: str):
     return records
 
 
-def split_records(records, test_on: list, val_size=0.2, seed=42):
+def split_records(records, leave_people: list, val_size=0.2, seed=42):
     test, others, strata = [], [], []
     for r in records:
-        if r["subject_id"] in test_on:
-            test.append(r)
-        else:
+        if r["subject_id"] not in leave_people:
             others.append(r)
             strata.append(f'{r["subject_id"]}__{r["gesture_id"]}')
     train, val = train_test_split(
@@ -55,7 +54,7 @@ def split_records(records, test_on: list, val_size=0.2, seed=42):
         stratify=strata,
     )
 
-    return train, val, test
+    return train, val
 
 
 def load_raw_csv(raw_csv: Path) -> np.ndarray:

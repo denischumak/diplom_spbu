@@ -13,11 +13,9 @@
 #define IMU_ACCEL_RANGE 4
 #define ADS_GAIN 8
 #define LSB_MV 0.015625
-#define HALL_CALIBRATION_NUM_SAMPLES_EACH 256
 #define ADS_DATA_RATE 6   // 475 SPS
 #define FREQ 100
-#define MAX_HALL_SENS_OFFSET_MV 50.f
-#define WARM_UP_DELAY_MILLIS 6'000
+#define WARM_UP_DELAY_MILLIS 9'000
 #define FINGER_NUMBER 3
 
 #define ADS3_READY_BIT (1 << 0)
@@ -63,24 +61,6 @@ static inline void wait_for_ads3() {
     pdTRUE,
     portMAX_DELAY
   );
-}
-
-inline int16_t getFingerRawData(int8_t finger_num) {
-  int16_t finger_data = 0;
-  switch (finger_num) {
-    case 0:
-    finger_data = ads3.readADC_Differential_0_3();
-    break;
-    case 1:
-    finger_data = ads3.readADC_Differential_2_3();
-    break;
-    case 2:
-    finger_data = ads3.readADC_Differential_1_3();
-    break;
-    default:
-    finger_data = -1;
-  }
-  return finger_data;
 }
 
 void warmUpAllHallSensors() {

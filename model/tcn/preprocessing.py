@@ -132,15 +132,15 @@ def add_hall_diff_to_sample(sample, n_hall):
     return new_data
 
 
-def preprocess_data(records, trimmer, n_hall, add_hall_diff):
+def preprocess_data(records, n_hall, add_hall_diff, trimmer=None):
     """Trims all samples, adds hall_diff channels"""
     samples = []
     for rec in records:
-        raw = rec["data"]
-        trim_in = utils.select_trim_columns(raw)
-        start, end = trimmer.trim(trim_in)
-
-        sample = raw[start:end].astype(np.float32, copy=False)
+        sample = rec["data"]
+        if trimmer is not None:
+            trim_in = utils.select_trim_columns(sample)
+            start, end = trimmer.trim(trim_in)
+            sample = sample[start:end]
         if sample.shape[0] < 10:
             continue
         sample = get_rel_quat(sample)

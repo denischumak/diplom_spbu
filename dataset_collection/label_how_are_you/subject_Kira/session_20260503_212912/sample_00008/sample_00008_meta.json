@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00008",
+  "gesture_label": "how_are_you",
+  "subject_id": "Kira",
+  "session_id": "20260503_212912",
+  "hand_size": "small",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "sitting",
+  "sampling_rate_hz": 100,
+  "n_frames": 235,
+  "duration_sec": 2.3630950450897217,
+  "raw_csv": "dataset_collection\\label_how_are_you\\subject_Kira\\session_20260503_212912\\sample_00008\\sample_00008_raw.csv",
+  "notes": "",
+  "created_at": "2026-05-03T21:30:07"
+}

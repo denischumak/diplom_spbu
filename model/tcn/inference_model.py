@@ -163,7 +163,7 @@ class LiveInference:
         prep_sample = [
             {"data": data, "gesture_id": self.idx2label[0], "subject_id": "u"}
         ]
-        prep_sample = preprocessing.preprocess_data(prep_sample, self.trimmer, self.sens_cfg["n_hall"], self.add_hall_diff)
+        prep_sample = preprocessing.preprocess_data(prep_sample, self.sens_cfg["n_hall"], self.add_hall_diff, self.trimmer)
 
         ds = GestureDataset(prep_sample, train=False, augment=False, **self.gd_kwargs)
 

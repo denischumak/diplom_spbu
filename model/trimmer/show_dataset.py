@@ -45,7 +45,7 @@ def plot_sample(
     n_hall_acc = sens_cfg["n_hall"] + sens_cfg["n_acc"]
     acc = data[:, sens_cfg["n_hall"] : n_hall_acc]
     gyro = data[:, n_hall_acc : n_hall_acc + sens_cfg["n_gyro"]]
-    quat = data[:, n_hall_acc + sens_cfg["n_gyro"] : ]
+    quat = data[:, n_hall_acc + sens_cfg["n_gyro"] :]
 
     acc_mag = np.linalg.norm(acc, axis=1, ord=1)
     gyro_mag = np.linalg.norm(gyro, axis=1, ord=1)
@@ -217,7 +217,7 @@ if __name__ == "__main__":
         "--root",
         type=str,
         # default=r"C:\Users\User\Desktop\diplom\auto_trimmer_dataset_and_code\test",
-        default=r"C:\Users\User\Desktop\diplom\dataset_collection\train",
+        default=r"C:\Users\User\Desktop\diplom\dataset_collection\label_how_are_you\subject_Kira",
         help="dataset_collection root folder",
     )
     args = parser.parse_args()
