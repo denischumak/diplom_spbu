@@ -1,18 +1,9 @@
-//=============================================================================================
-// MadgwickAHRS.h
-//=============================================================================================
-//
-// Implementation of Madgwick's IMU and AHRS algorithms.
-// See: http://www.x-io.co.uk/open-source-imu-and-ahrs-algorithms/
-//
-// From the x-io website "Open-source resources available on this website are
-// provided under the GNU General Public Licence unless an alternative licence
-// is provided in source."
-//
-// Date			Author          Notes
-// 29/09/2011	SOH Madgwick    Initial release
-// 02/10/2011	SOH Madgwick	Optimised for reduced CPU load
-//
+/*
+ * Modified implementation of Madgwick AHRS algorithm.
+ * Based on the original MadgwickAHRS library by Arduino Libraries.
+ * Original repository: https://github.com/arduino-libraries/MadgwickAHRS
+ * * Modified for ESP32-C3 and FreeRTOS integration.
+ */
 //=============================================================================================
 #ifndef MadgwickAHRS_h
 #define MadgwickAHRS_h
