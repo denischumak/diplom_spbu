@@ -1,3 +1,10 @@
+/* * -------------------------------------------------------------------
+ * MODIFIED IMPLEMENTATION NOTICE:
+ * This file is a modified version of the original source code from 
+ * the FastIMU library (https://github.com/LiquidCGS/FastIMU).
+ * -------------------------------------------------------------------
+ */
+
 #include "IMUUtils.hpp"
 
 void writeByteI2C(TwoWire &wire, uint8_t address, uint8_t subAddress, uint8_t data)
