@@ -1,3 +1,11 @@
+/* * -------------------------------------------------------------------
+ * MODIFIED IMPLEMENTATION NOTICE:
+ * This file is a modified version of the original source code from 
+ * the FastIMU library (https://github.com/LiquidCGS/FastIMU).
+ * -------------------------------------------------------------------
+ */
+
+
 #include "BMI160.hpp"
 
 int BMI160::init(calData cal, uint8_t address)
