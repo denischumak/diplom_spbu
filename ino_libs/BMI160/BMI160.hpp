@@ -1,3 +1,9 @@
+/* * -------------------------------------------------------------------
+ * MODIFIED IMPLEMENTATION NOTICE:
+ * This file is a modified version of the original source code from 
+ * the FastIMU library (https://github.com/LiquidCGS/FastIMU).
+ * -------------------------------------------------------------------
+ */
 #pragma once
 
 #ifndef _F_BMI160_H_
