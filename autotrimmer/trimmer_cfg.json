@@ -1,0 +1,16 @@
+{
+    "baseline_len_start": 12,
+    "baseline_len_end": 23,
+    "smooth_win_gyro": 2,
+    "smooth_win_acc": 5,
+    "smooth_win_quat": 6,
+    "thr_start": 0.03,
+    "thr_end": 0.11,
+    "min_start_run": 10,
+    "min_end_run": 24,
+    "margin_start": 3,
+    "margin_end": 3,
+    "acc_weight": 0.015503875968992248,
+    "gyro_weight": 0.7131782945736435,
+    "quat_weight": 0.2713178294573644
+}

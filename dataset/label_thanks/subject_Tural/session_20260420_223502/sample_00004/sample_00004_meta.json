@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00004",
+  "gesture_label": "thanks",
+  "subject_id": "Tural",
+  "session_id": "20260420_223502",
+  "hand_size": "large",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "standing",
+  "sampling_rate_hz": 100,
+  "n_frames": 403,
+  "duration_sec": 4.018653869628906,
+  "raw_csv": "dataset_collection\\label_thanks\\subject_Tural\\session_20260420_223502\\sample_00004\\sample_00004_raw.csv",
+  "notes": "",
+  "created_at": "2026-04-20T22:40:05"
+}

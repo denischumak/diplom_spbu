@@ -1,0 +1,20 @@
+{
+  "sample_id": "sample_00072",
+  "gesture_label": "hello",
+  "subject_id": "Denis",
+  "session_id": "20260417_235804",
+  "hand_size": "large",
+  "handedness": "right",
+  "working_fingers": [
+    "index",
+    "ring",
+    "pinky"
+  ],
+  "session_condition": "standing",
+  "sampling_rate_hz": 100,
+  "n_frames": 572,
+  "duration_sec": 5.71879506111145,
+  "raw_csv": "dataset_collection\\label_hello\\subject_Denis\\session_20260417_235804\\sample_00072\\sample_00072_raw.csv",
+  "notes": "",
+  "created_at": "2026-04-18T00:17:30"
+}

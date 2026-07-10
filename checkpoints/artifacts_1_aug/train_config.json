@@ -1,0 +1,54 @@
+{
+  "target_len": 416,
+  "subjects_train": [
+    "Denis",
+    "Masha",
+    "Tural",
+    "alex",
+    "artem"
+  ],
+  "sens_cfg": {
+    "n_hall": 3,
+    "n_acc": 3,
+    "n_gyro": 3,
+    "n_quat": 4
+  },
+  "add_hall_diff": true,
+  "trimmer_cfg": {
+    "baseline_len_start": 12,
+    "baseline_len_end": 23,
+    "smooth_win_gyro": 2,
+    "smooth_win_acc": 5,
+    "smooth_win_quat": 6,
+    "thr_start": 0.03,
+    "thr_end": 0.11,
+    "min_start_run": 10,
+    "min_end_run": 24,
+    "margin_start": 3,
+    "margin_end": 3,
+    "acc_weight": 0.015503875968992248,
+    "gyro_weight": 0.7131782945736435,
+    "quat_weight": 0.2713178294573644
+  },
+  "augment_cfg": {
+    "augment_train": true,
+    "hall_offset": 0.1,
+    "jitter_offset": 0.03,
+    "max_crop_ratio": 0.15,
+    "p_offset": 0.7,
+    "p_jitter": 0.5,
+    "p_warp": 0.5
+  },
+  "tcn_cfg": {
+    "in_channels": 16,
+    "hidden": 32,
+    "dropout": 0.2,
+    "num_blocks": 1,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "max_epochs": 100,
+    "patience": 30
+  },
+  "epochs": 0
+}
