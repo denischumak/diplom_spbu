@@ -80,7 +80,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/fullscheme.pdf" alt="Часть принципиальной схемы прототипа" width="600">
+  <img src="docs/fullscheme.png" alt="Часть принципиальной схемы прототипа" width="600">
 </p>
 
 <p align="center">
