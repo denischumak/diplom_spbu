@@ -2,6 +2,7 @@ import argparse
 import threading
 import time
 from pathlib import Path
+import tkinter as tk  # Добавлен импорт tkinter
 
 import numpy as np
 import serial
@@ -12,6 +13,7 @@ import model.preprocessing as preprocessing
 from model.gesture_ds_class import GestureDataset
 from model.tcn import GestureTCN
 from autotrimmer.autotrimmer import AutoTrimmer
+
 try:
     import pygame
 except ImportError:
@@ -53,6 +55,12 @@ class LiveInference:
         self.add_hall_diff = checkpoint["add_hall_diff"]
         self.total_sens_num = sum(self.sens_cfg.values())
         self.sampling_rate = args.sampling_rate_hz
+        self.pred_label_rus = { 
+                          "hello": "Привет", 
+                          "bye": "Пока", 
+                          "how_are_you": "Как дела?", 
+                          "thanks": "Спасибо" 
+                          }
 
         self.model = GestureTCN(self.tcn_cfg, num_classes=len(self.label2idx)).to(
             self.device
@@ -75,7 +83,6 @@ class LiveInference:
             n_hall=self.sens_cfg["n_hall"],
         )
 
-        
         self.ser = serial.Serial(
             port=args.port,
             baudrate=args.baudrate,
@@ -87,7 +94,6 @@ class LiveInference:
         self.stop_event = threading.Event()
 
         self.buffer = []
-        self.keyboard_thread = threading.Thread(target=self._keyboard_loop, daemon=True)
         self.audio_dir = Path(__file__).resolve().parent / "audio"
 
         self.audio_enabled = False
@@ -102,6 +108,38 @@ class LiveInference:
                 print(f"[INFO] Audio initialized, folder: {self.audio_dir}")
             except Exception as e:
                 print(f"[WARN] Audio init failed: {e}")
+                
+        # --- Инициализация графического интерфейса ---
+        self.root = tk.Tk()
+        self.root.title("Распознавание жестов")
+        self.root.attributes("-fullscreen", True)
+        self.root.configure(bg="white")
+
+        # Центральный текст (жест)
+        self.center_label = tk.Label(
+            self.root, 
+            text="Ожидание жеста", 
+            font=("Helvetica", 100, "bold"), 
+            bg="white", 
+            fg="black"
+        )
+        self.center_label.place(relx=0.5, rely=0.5, anchor="center")
+
+        # Текст в правом нижнем углу (статистика)
+        self.info_label = tk.Label(
+            self.root, 
+            text="", 
+            font=("Helvetica", 36), 
+            bg="white", 
+            fg="black",
+            justify="right"
+        )
+        self.info_label.place(relx=0.98, rely=0.98, anchor="se")
+
+        # Привязка клавиш
+        self.root.bind("<Return>", self._toggle_recording)
+        self.root.bind("<Escape>", self._quit_app)  # Выход по Escape
+        
         print("[INFO] Initialization ended.")
 
     def _audio_path_for_label(self, label: str) -> Path:
@@ -128,11 +166,22 @@ class LiveInference:
 
         threading.Thread(target=_worker, daemon=True).start()
     
+    def _toggle_recording(self, event=None):
+        """Переключение записи по нажатию Enter в GUI"""
+        if not self.recording.is_set():
+            self._start_recording()
+            self.center_label.config(text="Запись жеста")
+            self.info_label.config(text="")
+        else:
+            self.center_label.config(text="Обработка...")
+            self.root.update()  # Принудительно обновляем интерфейс перед инференсом
+            self._stop_recording_and_infer()
+
     def _start_recording(self):
         with self.lock:
             self.buffer = []
         self.recording.set()
-        print("\n[REC] recording started. Press Enter again to stop.", flush=True)
+        print("\n[REC] recording started.", flush=True)
 
     def _stop_recording_and_infer(self):
         t_start = time.perf_counter()
@@ -141,16 +190,12 @@ class LiveInference:
             data = np.array(self.buffer, dtype=np.float32)
 
         if data.shape[0] < 50:
-            print(
-                f"[WARN] too few frames ({data.shape[0]}), sample discarded.",
-                flush=True,
-            )
+            print(f"[WARN] too few frames ({data.shape[0]}), sample discarded.", flush=True)
+            self.center_label.config(text="Ожидание жеста")
             return
+            
         duration = data.shape[0] / self.sampling_rate
-        print(
-            f"[INFO] Processing sample ({data.shape[0]} frames, {duration:.3f}s)...",
-            flush=True,
-        )
+        print(f"[INFO] Processing sample ({data.shape[0]} frames, {duration:.3f}s)...", flush=True)
 
         prep_sample = [
             {"data": data, "gesture_id": self.idx2label[0], "subject_id": "u"}
@@ -162,7 +207,6 @@ class LiveInference:
         x = x.unsqueeze(0).to(self.device)  # shape: [1, C, T]
         length = length.unsqueeze(0).to(self.device)  # shape: []
 
-  
         with torch.no_grad():
             logits = self.model(x, length)
             probs = torch.softmax(logits, dim=1)
@@ -172,35 +216,23 @@ class LiveInference:
         pred_label = self.idx2label[pred_idx]
         t_end = time.perf_counter()
         inf_time_ms = (t_end - t_start) * 1000
+        
         print("=" * 40)
-        print(
-            f"Predicted gesture: {pred_label.upper()} (Confidence: {confidence:.1f}%, inference time: {inf_time_ms:.2f} ms)"
-        )
+        print(f"Predicted gesture: {pred_label.upper()} (Confidence: {confidence:.1f}%, inference time: {inf_time_ms:.2f} ms)")
         print("=" * 40)
+        
+        # Обновление графического интерфейса
+        pred_label_rus = self.pred_label_rus.get(pred_label, pred_label)
+        self.center_label.config(text=pred_label_rus.upper())
+        self.info_label.config(text=f"Уверенность: {confidence:.1f}%\nВремя: {inf_time_ms:.2f} мс")
+        
         self._play_label_audio(pred_label)
 
-    def _keyboard_loop(self):
-        print("\nControls:")
-        print("  [Enter]  -> start/stop recording")
-        print("  [q] + [Enter] -> quit\n", flush=True)
-
-        while not self.stop_event.is_set():
-            try:
-                cmd = input().strip().lower()
-            except (EOFError, KeyboardInterrupt):
-                self.stop_event.set()
-                break
-
-            if cmd == "q":
-                self.stop_event.set()
-                self.recording.clear()
-                break
-
-            if not self.recording.is_set():
-                self._start_recording()
-            else:
-                self._stop_recording_and_infer()
-                print("[READY] press Enter for next recording.", flush=True)
+    def _quit_app(self, event=None):
+        """Закрытие приложения по Escape"""
+        self.stop_event.set()
+        self.recording.clear()
+        self.root.destroy()
 
     def _serial_loop(self):
         while not self.stop_event.is_set():
@@ -226,9 +258,13 @@ class LiveInference:
                 print(f"[ERROR] {e}", flush=True)
 
     def run(self):
-        self.keyboard_thread.start()
+        # Запускаем чтение порта в фоновом потоке
+        serial_thread = threading.Thread(target=self._serial_loop, daemon=True)
+        serial_thread.start()
+        
         try:
-            self._serial_loop()
+            # Запускаем основной цикл графического интерфейса в главном потоке
+            self.root.mainloop()
         finally:
             self.stop_event.set()
             try:
