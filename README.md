@@ -125,13 +125,13 @@
   <tr>
     <td width="50%" align="center">
       <figure>
-        <img src="docs/pitch_dynamic_characteristics.png" alt="Левый график" width="100%">
+        <img src="docs/roll_dynamic_characteristics.png" alt="Левый график" width="100%">
         <figcaption><b>Рис. 4.</b> Временная диаграмма угла крена (Roll) при наклонах кисти с разной скоростью.</figcaption>
       </figure>
     </td>
     <td width="50%" align="center">
       <figure>
-        <img src="docs/roll_dynamic_characteristics.png" alt="Правый график" width="100%">
+        <img src="docs/pitch_dynamic_characteristics.png" alt="Правый график" width="100%">
         <figcaption><b>Рис. 5.</b> Временная диаграмма угла тангажа (Pitch) при наклонах кисти с разной скоростью. </figcaption>
       </figure>
     </td>
@@ -144,7 +144,7 @@
 </p>
 
 <p align="center">
-<b>Рис. 7.</b> Схема подключения измерительного канала на основе датчика Холла к
+<b>Рис. 6.</b> Схема подключения измерительного канала на основе датчика Холла к
 АЦП ADS1115.
 </p>
 
@@ -157,7 +157,7 @@
 </p>
 
 <p align="center">
-<b>Рис. 6.</b> Прототип разработанной сенсорной перчатки.
+<b>Рис. 7.</b> Прототип разработанной сенсорной перчатки.
 </p>
 
 * (I)-(V): датчики Холла SS494B на фалангах
@@ -167,6 +167,7 @@
 
 
 ## Программное обеспечение
+### Архитектура ПО
 
 Встроенное ПО разработано для микроконтроллера **ESP32-C3** с использованием **FreeRTOS**.
 
